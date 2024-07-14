@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+    .box {
+        width: 1000px;
+        height: 300px;
+        text-align: center;
+        line-height: 300px;
+        margin: 0 auto;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .black {
+        background-color: black;
+    }
+
+    .pink {
+        background-color: pink;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .white {
+        background-color: white;
+    }
+
+    .aqua {
+        background-color: aqua;
+    }
+
+    .coral {
+        background-color: coral;
+    }
+</style>
+<body>
+  <div class="box green">我是内容</div>
+  <div class="box black">我是内容</div>
+  <div class="box pink">我是内容</div>
+  <div class="box blue">我是内容</div>
+  <div class="box yellow">我是内容</div>
+  <div class="box white">我是内容</div>
+  <div class="box aqua">我是内容</div>
+  <div class="box coral">我是内容</div>
+</body>
+<script>
+  const white = document.querySelector('.white');
+  const options = {
+    root: null, // 使用视口作为根
+    rootMargin: '0px',
+    threshold: 0.5 // 当目标元素50%可见时触发
+  };
+  const ob = new IntersectionObserver((entries, observer) => {
+    if(entries[0].isIntersecting){
+      console.log(entries[0].isIntersecting, '进入视口触发')
+    }
+    console.log(entries[0].isIntersecting)
+  }, options)
+  ob.observe(white);
+</script>
+</html>
