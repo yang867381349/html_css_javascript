@@ -63,6 +63,7 @@
     threshold: 0.5 // 当目标元素50%可见时触发
   };
   const ob = new IntersectionObserver((entries, observer) => {
+    console.log(observer)
     if (entries[0].isIntersecting) {
       console.log(entries[0].isIntersecting, '进入视口触发')
     }
