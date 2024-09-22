@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>排序动画/删除动画</title>
+</head>
+<body>
+  <ul>
+    <li class="btnDel" style="view-transition-name: li-1">1</li>
+    <li class="btnDel" style="view-transition-name: li-2">2</li>
+    <li class="btnDel" style="view-transition-name: li-3">3</li>
+    <li class="btnDel" style="view-transition-name: li-4">4</li>
+    <li class="btnDel" style="view-transition-name: li-5">5</li>
+  </ul>
+  <script>
+		const liBtnS = document.querySelectorAll('.btnDel');
+		liBtnS.forEach(li => {
+			li.addEventListener('click', function () {
+				document.startViewTransition(()=>{
+					li.remove();
+        })
+			});
+		});
+  </script>
+</body>
+</html>
