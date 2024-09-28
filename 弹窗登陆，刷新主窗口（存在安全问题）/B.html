@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>登陆成功,3秒后刷新主页面</div>
+<script>
+  setTimeout(()=>{
+		// 让主页重新刷新
+    window.opener.location.reload();
+  },3000)
+</script>
+</body>
+</html>

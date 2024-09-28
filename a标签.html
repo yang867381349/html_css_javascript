@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a id="link" class="blue active" rel="noopener noreferrer">我是要被修改的标签</a>
+<a target="_preview">独立窗口预览，只显示一个独立窗口</a>
+<a ping="/assets/example.jpg">每次点击都会向后端发送一次POST请求</a>
+</body>
+<script>
+	const link = document.querySelector('#link');
+	<!--  移除元素的类名  -->
+  link.classList.remove('active');
+	<!--  移除元素的属性值  -->
+	link.relList.remove('noreferrer');
+</script>
+</html>
