@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字环绕</title>
+  <style>
+      .container{
+          width: 500px;
+          height: 300px;
+          margin:0 auto;
+          border-radius: 10px;
+          padding: 10px;
+          background-color: #4c5161;
+      }
+      .image {
+          float: left;
+          width: 150px;
+          height: 150px;
+          margin-top: 1.5em;
+          margin-right: 1em;
+          object-fit: cover;
+          border-radius: 50%;
+          shape-outside: circle(50% at 50% 50%);
+      }
+      p {
+          color: #dddddd;
+          line-height: 1.6;
+          max-width: 600px;
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://via.placeholder.com/150" alt="示例图片" class="image">
+  <p>
+    这是一个示例，演示如何使用 CSS 的 shape-outside 属性来使文本围绕图像流动。该属性定义了浮动元素的形状，文本将根据这个形状环绕它。在这个例子中，我们使用了一个圆形的剪切路径，将文本环绕在一个圆形的图片周围。你可以通过调整 shape-outside 的值来改变文本环绕的形状，例如使用 polygon() 或 ellipse()。
+  </p>
+  <p>
+    继续添加更多文本，看看文字是如何环绕图像的。这个技术适用于各种形状，可以带来非常独特的布局效果。
+  </p>
+</div>
+
+</body>
+</html>
