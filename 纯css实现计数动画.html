@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数字动画</title>
+  <style>
+    /* 定义自定义属性 --seed */
+    @property --seed {
+      syntax: "<integer>";
+      inherits: true;
+      initial-value: 0;
+    }
+
+    /* 使用 keyframes 定义从 0 到 100 的动画 */
+    @keyframes seed {
+      from { --seed: 0; }
+      to { --seed: 100; }
+    }
+
+    /* 定义数字动画样式 */
+    .ani-num {
+      font-size: 500%;
+      color: transparent;
+      position: relative;
+    }
+
+    .ani-num::before {
+      counter-reset: num calc(var(--seed) * var(--num) / 100);
+      content: counter(num);
+      position: absolute;
+      color: #000000;
+      transition: var(--seed) 2s linear;
+    }
+
+    /* 启动动画 */
+    .animate::before {
+      animation: seed 2s linear forwards;
+    }
+  </style>
+</head>
+<body>
+<strong class="ani-num" style="--num: 8888" onclick="document.querySelector('.ani-num').classList.add('animate')">8888</strong>
+</body>
+</html>
